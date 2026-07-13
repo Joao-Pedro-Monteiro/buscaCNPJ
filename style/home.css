@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    cursor: default;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.15s ease-in;
+}
+
+html{
+    width: 100vw;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FBF5EE;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+button{
+    cursor: pointer;
+}
+
+/** HEADER ========================================= */
+header{
+    width: 100vw;
+    height: 70px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#header-logo{
+    width: 10%;
+    height: auto;
+    cursor: pointer;
+}
+#header-github{
+    width: fit-content;
+    height: fit-content;
+    background-color: #282626;
+    padding: 7px;
+    font: 400 14px Montserrat;
+    color: #fff;
+    border-radius: 999px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+}
+#header-github *{
+    cursor: pointer;
+}
+#header-github:hover{
+    border: solid 2px #FBF5EE;
+    box-shadow: 0 0 10px 3px #282626;
+}
+#header-github:hover *{
+    filter: blur(0.6px);
+}
+
+/** MAIN =========================================== */
+main{
+    width: 100vw;
+    max-width: 100vw;
+    height: calc(100vh - 80px);
+    margin: 30px 0;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/** CSS GRID */
+.parent {
+    width: 70vw;
+    min-width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+}
+
+/** Barra de pesquisa */
+#div1 {
+    width: 100%;
+    min-width: fit-content;
+    height: fit-content;
+    padding: 3px 8px;
+    border: solid 1px #111;
+    border-radius: 999px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+    grid-column: span 3 / span 3;
+}
+#div1-searchForm{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+}
+#div1-searchLabel{
+    width: fit-content;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#div1-searchInput{
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    padding: 4px 7px;
+    border-radius: 999px;
+    outline: none;
+    font: 600 14px Montserrat;
+    color: #111;
+    cursor: text;
+}
+#div1-searchInput::placeholder{
+    color: #111;
+    opacity: 0.5;
+}
+#div1-separator{
+    width: 1px;
+    height: 22px;
+    background-color: #111;
+}
+#div1-searchSubmit{
+    width: fit-content;
+    height: 30px;
+    padding: 0 10px;
+    background: none;
+    font: 600 14px Montserrat;
+}
+#div1-searchSubmit:hover{
+    font-size: 15px;
+}
+
+/** infos */
+#div2 {
+    padding: 5px 10px;
+    border: solid 1px #111;
+    border-radius: 15px;
+    grid-row: span 5 / span 5;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#div2-infosList{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 4px;
+}
+.div2-infosListItem{
+    width: 100%;
+    height: 24px;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.div2-infosListItem:hover{
+    border-radius: 5px;
+    background-color: #f1e5d8;
+    box-shadow: 0 0 7   px #f1e5d8;
+}
+.key{
+    white-space: nowrap; /* Impede a quebra de linha */
+    font: 500 14px Montserrat;
+    color: #111;
+}
+.value{
+    white-space: nowrap; /* Impede a quebra de linha */
+    padding-left: 4px;
+    text-align: right;
+    font: 500 14px Montserrat;
+    color: #383636;
+}
+#cnae_fiscal_descricao{
+    width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.div2-infosListSeparator{
+    width: 100%;
+    height: 3px;
+    border-bottom: dashed 1px #111;
+}
+
+/** ADV - Array Data View ========================== */
+#div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 5 / span 5;
+    grid-row-start: 2;
+    border: solid 1px #111;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: hidden;
+}
+
+/** nav */
+#DAV-nav{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.DAV-tabBtn{
+    width: fit-content;
+    height: 20px;
+    padding: 0 6px;
+}
+
+/** data viewer (section) */
+#DAV-dataviewer{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    background-color: #fff; /* retirar depois */
+}
+
+#DAV-dataviewer-NULLopt{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: none;
+}
+#DAV-dataviewer[dataarray="null"] #DAV-dataviewer-NULLopt{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+
+/** FOOTER ========================================= */
+footer{
+    width: 100vw;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #f1e5d8;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#footer-copy{
+    font-size: 12px;
+    color: #383636;
+}
+
+/** ELEMENTS ======================================= */
+
+.Sicon{
+    width: 24px;
+    height: 24px;
+}
+.Micon{
+    width: 32px;
+    height: 32px;
+}
+.Bicon{
+    width: 40px;
+    height: 40px;
+}

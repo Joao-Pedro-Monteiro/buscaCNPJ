@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca CNPJ</title>
+
+    <!-- css -->
+    <link href="style/home.css" type="text/css" rel="stylesheet">
+    
+    <!-- js -->
+    <script src="script/home.js" type="text/javascript" defer></script>
+    <script src="script/query.js" type="text/javascript" defer></script>
+    
+    
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="logo" id="header-logo">
+        
+        <button id="header-github">
+            <img src="images/icons/githubLight.svg" class="Micon">
+            <p>ver no GitHub</p>
+        </button>
+    </header>
+
+    <main>        
+        <div class="parent">
+            <div id="div1" name="searchBar">
+                <form id="div1-searchForm">
+                    <label for="div1-searchInput" id="div1-searchLabel">
+                        <img src="images/icons/search.svg" id="div1-searchIcon" class="Sicon">
+                    </label>
+                    <input type="text" name="searchTerm" id="div1-searchInput" placeholder="Busque com por um CNPJ">
+                    <span id="div1-separator"></span>
+                    <button type="submit" id="div1-searchSubmit">Buscar</button>
+                </form>
+            </div>
+            <div id="div2">
+                <h4 id="razao_social"></h4>
+                <ul id="div2-infosList">
+                    <li class="div2-infosListItem">
+                        <p class="key">Nome Fantasia:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="nome_fantasia">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">CNAE Fiscal:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="cnae_fiscal_descricao">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Início das atividade :</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="data_inicio_atividade">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">País:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="pais">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key"><abbr title="Unidade Federativa (Estado)">Uf:</abbr></p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="uf">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Cep:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="cep">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Município:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="municipio">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Bairro:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="bairro">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Logradouro:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="logradouro">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Número:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="numero">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Complemento:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="complemento">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Capital Social:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="capital_social">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Telefone 1:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="telefone1">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Telefone 2:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="telefone2">null</p>
+                    </li>
+                    <li class="div2-infosListItem">
+                        <p class="key">Natureza Jurídica:</p>
+                        <span class="div2-infosListSeparator"></span>
+                        <p class="value" id="natureza_juridica">null</p>
+                    </li>
+                </ul>
+
+            </div>
+            <div id="div3">
+                <!-- ADV =  Data Array Viewer -->
+                <nav id="DAV-nav">
+                    <button type="button" class="DAV-tabBtn" id="DAV-data" title="Quadro de Socios Administradores" onclick="DAV_dataSelect('qsa')">QSA</button>
+                    <span class="DAV-navSeparator">|</span>
+                    <button type="button" class="DAV-tabBtn" id="DAV-data" title="Classificação Nacional de Atividades Econômicas Secundárias" onclick="DAV_dataSelect('cnaes_sec')">CNAEs Secundários</button>
+                </nav>
+                <section id="DAV-dataviewer" dataarray="null">
+                    <span id="DAV-dataviewer-NULLopt">Sem Informações</span>
+                </section>
+            </div>
+        </div>  
+    </main>
+    
+    <footer>
+        <p id="footer-copy">
+            &copy; 2026 buscaCPNJ. Todos os direitos reservados.
+        </p>
+    </footer>
+</body>
+</html>
