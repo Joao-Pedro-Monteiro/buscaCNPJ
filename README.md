@@ -6,7 +6,6 @@
 ![GitHub forks](https://img.shields.io/github/forks/Joao-Pedro-Monteiro/buscaCNPJ?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Joao-Pedro-Monteiro/buscaCNPJ?style=for-the-badge)
 
-<!-- Troque pelo caminho de um print real do projeto -->
 <img src="images/logoBRANCA.png" alt="Logo do projeto">
 
 > O **BuscaCNPJ** é uma aplicação web que consulta dados cadastrais de empresas brasileiras a partir do CNPJ, usando a API pública [MinhaReceita](https://minhareceita.org/). Digite um CNPJ válido e veja na hora informações como razão social, endereço, telefone, capital social e natureza jurídica.
@@ -59,7 +58,7 @@ Basta abrir o arquivo `index.html` diretamente no navegador (duplo clique, ou bo
 
 1. Digite um CNPJ válido (14 dígitos, com ou sem pontuação) no campo de busca.
 2. Clique em **Buscar**.
-3. Os dados da empresa aparecem no painel à esquerda. As abas "QSA" / "CNAEs Secundários" e outras, ficaram disponíveis no painel à direita na próxima atualização.
+3. Os dados da empresa aparecem no painel à esquerda. As abas "QSA" / "CNAEs Secundários" e outras, ficarão disponíveis no painel à direita na próxima atualização.
 
 >[!CAUTION]
 >Se em algum momento a busca parar de funcionar com o arquivo aberto direto, é sinal de que a API mudou sua política de CORS — nesse caso, sirva os arquivos com um servidor local (ex: extensão Live Server do VS Code, ou `npx serve .`) para contornar o problema.
@@ -73,6 +72,7 @@ Basta abrir o arquivo `index.html` diretamente no navegador (duplo clique, ou bo
 buscaCNPJ/
 ├── images/
 │   ├── logo.png
+│   ├── logoBRANCA.png
 │   └── icons/
 │       ├── githubLight.svg
 │       └── search.svg
