@@ -3,137 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busca CNPJ</title>
+    <meta name="description" content="Consulte dados públicos de qualquer CNPJ brasileiro — nome, endereço, contatos, sócios e CNAEs — usando a API Minha Receita.">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Busca CNPJ · Ficha cadastral</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- css -->
     <link href="style/home.css" type="text/css" rel="stylesheet">
-    
+
     <!-- js -->
     <script src="script/home.js" type="text/javascript" defer></script>
     <script src="script/query.js" type="text/javascript" defer></script>
-    
-    
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="logo" id="header-logo">
-        
-        <button id="header-github">
-            <img src="images/icons/githubLight.svg" class="Micon">
+        <div id="header-brand">
+            <img src="images/logo.png" alt="logo" id="header-logo">
+            <div id="header-title">
+                <span id="header-titleMain">Busca CNPJ</span>
+                <span id="header-titleSub">ficha cadastral via Receita Federal</span>
+            </div>
+        </div>
+
+        <button id="header-github" type="button">
+            <img src="images/icons/githubLight.svg" class="Micon" alt="">
             <p>ver no GitHub</p>
         </button>
     </header>
 
-    <main>        
-        <div class="parent">
-            <div id="div1" name="searchBar">
-                <form id="div1-searchForm">
-                    <label for="div1-searchInput" id="div1-searchLabel">
-                        <img src="images/icons/search.svg" id="div1-searchIcon" class="Sicon">
-                    </label>
-                    <input type="text" name="searchTerm" id="div1-searchInput" placeholder="Busque com por um CNPJ">
-                    <span id="div1-separator"></span>
-                    <button type="submit" id="div1-searchSubmit">Buscar</button>
-                </form>
-            </div>
-            <div id="div2">
-                <h4 id="razao_social"></h4>
-                <ul id="div2-infosList">
-                    <li class="div2-infosListItem">
-                        <p class="key">Nome Fantasia:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="nome_fantasia">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">CNAE Fiscal:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="cnae_fiscal_descricao">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Início das atividade :</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="data_inicio_atividade">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">País:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="pais">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key"><abbr title="Unidade Federativa (Estado)">Uf:</abbr></p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="uf">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Cep:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="cep">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Município:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="municipio">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Bairro:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="bairro">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Logradouro:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="logradouro">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Número:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="numero">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Complemento:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="complemento">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Capital Social:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="capital_social">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Telefone 1:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="telefone1">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Telefone 2:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="telefone2">null</p>
-                    </li>
-                    <li class="div2-infosListItem">
-                        <p class="key">Natureza Jurídica:</p>
-                        <span class="div2-infosListSeparator"></span>
-                        <p class="value" id="natureza_juridica">null</p>
-                    </li>
-                </ul>
+    <main>
+        <div id="div1" name="searchBar">
+            <form id="div1-searchForm" autocomplete="off">
+                <label for="div1-searchInput" id="div1-searchLabel">
+                    <img src="images/icons/search.svg" id="div1-searchIcon" class="Sicon" alt="">
+                </label>
+                <input
+                    type="text"
+                    name="searchTerm"
+                    id="div1-searchInput"
+                    placeholder="00.000.000/0000-00"
+                    inputmode="numeric"
+                    maxlength="18"
+                >
+                <span id="div1-separator"></span>
+                <button type="submit" id="div1-searchSubmit">
+                    <span id="div1-searchSubmitLabel">Buscar</span>
+                    <span id="div1-searchSpinner" aria-hidden="true"></span>
+                </button>
+            </form>
+            <p id="div1-hint">Digite os 14 números do CNPJ, com ou sem pontuação.</p>
+        </div>
 
-            </div>
-            <div id="div3">
-                <!-- ADV =  Data Array Viewer -->
+        <div class="parent">
+            <section id="div2" aria-live="polite">
+                <div id="div2-empty" hidden>
+                    <span id="div2-emptyStamp">SEM<br>CONSULTA</span>
+                    <p>Informe um CNPJ acima para abrir a ficha cadastral da empresa.</p>
+                </div>
+
+                <div id="div2-content" hidden>
+                    <div id="div2-head">
+                        <div id="div2-headText">
+                            <span id="div2-eyebrow">Razão social</span>
+                            <h4 id="razao_social"></h4>
+                            <p id="div2-cnpjLine">CNPJ Nº <span id="cnpj_formatted">—</span></p>
+                        </div>
+                        <div id="situacao-stamp">
+                            <span id="situacao-stampText">—</span>
+                        </div>
+                    </div>
+
+                    <ul id="div2-infosList">
+                        <li class="div2-infosListItem">
+                            <p class="key">Nome Fantasia</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="nome_fantasia">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Porte</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="porte">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Natureza Jurídica</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="natureza_juridica">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">CNAE Fiscal</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="cnae_fiscal_descricao">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Início das Atividades</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="data_inicio_atividade">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Situação desde</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="data_situacao_cadastral">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Capital Social</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="capital_social">—</p>
+                        </li>
+                        <li class="div2-infosListItem div2-infosListItem--divider">
+                            <p class="key">Endereço</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Logradouro</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="logradouro">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Número</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="numero">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Complemento</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="complemento">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Bairro</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="bairro">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Município</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="municipio">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key"><abbr title="Unidade Federativa">UF</abbr></p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="uf">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">CEP</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="cep">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">País</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="pais">—</p>
+                        </li>
+                        <li class="div2-infosListItem div2-infosListItem--divider">
+                            <p class="key">Contato</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Telefone 1</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="telefone1">—</p>
+                        </li>
+                        <li class="div2-infosListItem">
+                            <p class="key">Telefone 2</p>
+                            <span class="div2-infosListSeparator"></span>
+                            <p class="value" id="telefone2">—</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="div2-error" hidden>
+                    <span id="div2-errorStamp">NÃO<br>CONSTA</span>
+                    <p id="div2-errorText">CNPJ não encontrado na base da Receita Federal.</p>
+                </div>
+            </section>
+
+            <section id="div3">
+                <!-- DAV = Data Array Viewer -->
                 <nav id="DAV-nav">
-                    <button type="button" class="DAV-tabBtn" id="DAV-data" title="Quadro de Socios Administradores" onclick="DAV_dataSelect('qsa')">QSA</button>
-                    <span class="DAV-navSeparator">|</span>
-                    <button type="button" class="DAV-tabBtn" id="DAV-data" title="Classificação Nacional de Atividades Econômicas Secundárias" onclick="DAV_dataSelect('cnaes_sec')">CNAEs Secundários</button>
+                    <button type="button" class="DAV-tabBtn active" data-tab="qsa" title="Quadro de Sócios e Administradores" onclick="DAV_dataSelect('qsa')">QSA</button>
+                    <button type="button" class="DAV-tabBtn" data-tab="cnaes_sec" title="Classificação Nacional de Atividades Econômicas Secundárias" onclick="DAV_dataSelect('cnaes_sec')">CNAEs Secundários</button>
                 </nav>
                 <section id="DAV-dataviewer" dataarray="null">
-                    <span id="DAV-dataviewer-NULLopt">Sem Informações</span>
+                    <span id="DAV-dataviewer-NULLopt">Sem informações</span>
                 </section>
-            </div>
-        </div>  
+            </section>
+        </div>
     </main>
-    
+
     <footer>
         <p id="footer-copy">
-            &copy; 2026 buscaCPNJ. Todos os direitos reservados.
+            &copy; 2026 buscaCNPJ · dados via <a href="https://minhareceita.org" target="_blank" rel="noopener">Minha Receita</a>. Todos os direitos reservados.
         </p>
     </footer>
 </body>
