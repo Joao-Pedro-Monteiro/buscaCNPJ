@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const Github_btn = document.getElementById('header-github');
     Github_btn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.open('https://github.com/Joao-Pedro-Monteiro')
+        window.open('https://github.com/Joao-Pedro-Monteiro/buscaCNPJ')
     })
 })
