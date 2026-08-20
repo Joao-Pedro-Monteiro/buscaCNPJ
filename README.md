@@ -2,7 +2,7 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Joao-Pedro-Monteiro/buscaCNPJ?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/Joao-Pedro-Monteiro/buscaCNPJ?style=for-the-badge)
-![Static Badge](https://img.shields.io/badge/Version-V1.0.0-purple?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Version-V2.0.0-purple?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/Joao-Pedro-Monteiro/buscaCNPJ?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Joao-Pedro-Monteiro/buscaCNPJ?style=for-the-badge)
 
