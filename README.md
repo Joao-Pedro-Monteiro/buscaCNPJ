@@ -10,6 +10,13 @@
 
 > O **BuscaCNPJ** é uma aplicação web que consulta dados cadastrais de empresas brasileiras a partir do CNPJ, usando a API pública [MinhaReceita](https://minhareceita.org/). Digite um CNPJ válido e veja na hora informações como razão social, endereço, telefone, capital social e natureza jurídica.
 
+## Acesse
+Clique no link abaixo e acesse a página <br/>
+[https://joao-pedro-monteiro.github.io/buscaCNPJ](https://joao-pedro-monteiro.github.io/buscaCNPJ).
+<br/>
+<br/>
+<br/>
+
 ### 🛠️ Tecnologias utilizadas
 
 - HTML5
@@ -25,18 +32,20 @@
 
 O projeto ainda está em desenvolvimento. As próximas atualizações serão voltadas para as seguintes tarefas:
 
-- [ ] A lógica das abas "QSA" e "CNAEs Secundários" ainda não está implementada nos arquivos JS do projeto
-- [ ] Tratamento de erro da requisição — hoje o `fetch` não trata falhas de rede/API (sem CNPJ encontrado, API fora do ar, etc.)
-- [ ] Loading/feedback visual durante a busca
-- [ ] Layout e Exportação de resultados
+- [ ] Exportação de resultados
 
-## 💻 Pré-requisitos
+<br/>
+<br/>
+
+# Caso queira baixar e roda na sua máquina
+
+## ⚙️ Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Navegador web atualizado (Chrome, Firefox, Edge, etc) .
-- Boa conexão com a internet, já que o projeto consome a API pública [MinhaReceita](https://minhareceita.org/) em tempo real.
-- Não há dependências de instalação (Node, frameworks, servidor local, etc.) — o projeto é 100% front-end estático e roda direto abrindo o `index.html`.
+- Boa conexão com a internet, já que o projeto consome a API [MinhaReceita](https://minhareceita.org/) em tempo real.
+- Não há dependências de instalação (Node, frameworks, servidor local, etc.) — o projeto ainda é 100% front-end estático e roda direto abrindo o `index.html`.
 
 >[!IMPORTANT]
 >Verifique  se seu navegador está atualizado, isso garante uma melhor comunicação com a API
@@ -65,25 +74,6 @@ Basta abrir o arquivo `index.html` diretamente no navegador (duplo clique, ou bo
 >Caso o uso do servidor local não resolva, abra uma ISSUE e reporte o problema.
 
 
-
-## 📁 Estrutura do projeto
-
-```
-buscaCNPJ/
-├── images/
-│   ├── logo.png
-│   ├── logoBRANCA.png
-│   └── icons/
-│       ├── githubLight.svg
-│       └── search.svg
-├── script/
-│   ├── home.js     # navegação do header (logo e botão do GitHub)
-│   └── query.js     # validação de CNPJ, chamada à API e exibição dos dados
-├── style/
-│   └── home.css
-└── index.html
-```
-
 ## 📫 Contribuindo para o BuscaCNPJ
 
 Para contribuir com o BuscaCNPJ, siga estas etapas:
@@ -98,4 +88,4 @@ Consulte a documentação do GitHub em [como criar uma solicitação pull](https
 
 ## 📝 Licença
 
-Este projeto ainda não possui uma licença definida. Caso deseje reutilizá-lo, entre em contato com o autor.
+Este projeto está sob a [licença MIT](https://github.com/Joao-Pedro-Monteiro/buscaCNPJ/blob/main/LICENSE)
